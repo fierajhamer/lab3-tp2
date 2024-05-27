@@ -1,3 +1,4 @@
 Archivo 1, fusión con conflicto
 
 Modificación agregada desde la rama con-conflicto
+Segunda modifación
