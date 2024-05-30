@@ -3,11 +3,13 @@ const lista = document.querySelector("#lista");
 const listaDeTareas = document.querySelector("#lista-de-tareas");
 
 boton.onclick = async () => {
+  //Estilos al momento de mostrar la lista de usuarios
   document.body.style.height = "fit-content";
   document.querySelector(".container").style.flexDirection = "row";
   lista.style.width = "30%";
   lista.style.margin = "70px 0 0 0";
   boton.style.display = "none";
+
   const consultaUsuarios = await fetch(
     "https://jsonplaceholder.typicode.com/users"
   );
@@ -20,6 +22,7 @@ boton.onclick = async () => {
     const listaTareas = await consultaTareas.json();
     let listaIDs = [];
 
+    //Renderizado de la lista de usuario y botones de tareas
     listaUsuarios.forEach((persona) => {
       let nuevaPersona = document.createElement("li");
       let botonTareas = document.createElement("button");
@@ -35,6 +38,8 @@ boton.onclick = async () => {
       nuevaPersona.innerHTML = `${nuevaPersona.innerHTML} <br>Correo: ${persona.email}, sitio web: <a href=# target=_BLANK>${persona.website}</a>`;
     });
 
+
+    //Renderizado de la lista de tareas
     listaIDs.forEach((idBoton) => {
       document.getElementById(`${idBoton}`).onclick = () => {
         listaDeTareas.innerHTML = "";
