@@ -8,7 +8,11 @@ formulario.onsubmit = (form) => {
   let ladoC = document.querySelector("#inputC").value;
 
   let cuadrado = ladoB * ladoC;
-  let triangulo = ((ladoA-ladoC)*ladoB)/2
+  let triangulo = ((ladoA - ladoC) * ladoB) / 2;
 
-  resultado.innerHTML = `Área: ${cuadrado + triangulo} m2`
+  if (ladoC >= ladoA) {
+    resultado.innerHTML = "Error, A debe ser mayor a C";
+  } else {
+    resultado.innerHTML = `Área: ${cuadrado + triangulo} m2`;
+  }
 };
