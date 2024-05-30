@@ -10,7 +10,7 @@ formulario.onsubmit = (form) => {
   let cuadrado = ladoB * ladoC;
   let triangulo = ((ladoA - ladoC) * ladoB) / 2;
 
-  if (ladoC >= ladoA) {
+  if (parseInt(ladoC) >= parseInt(ladoA)) {
     resultado.innerHTML = "Error, A debe ser mayor a C";
   } else {
     resultado.innerHTML = `Área: ${cuadrado + triangulo} m2`;
