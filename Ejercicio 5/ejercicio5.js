@@ -3,15 +3,20 @@ let resultado = document.querySelector("#resultadoArea");
 
 formulario.onsubmit = (form) => {
   form.preventDefault();
-  let ladoA = document.querySelector("#inputA").value;
-  let ladoB = document.querySelector("#inputB").value;
-  let ladoC = document.querySelector("#inputC").value;
+  let ladoA = parseInt(document.querySelector("#inputA").value);
+  let ladoB = parseInt(document.querySelector("#inputB").value);
+  let ladoC = parseInt(document.querySelector("#inputC").value);
 
   let cuadrado = ladoB * ladoC;
   let triangulo = ((ladoA - ladoC) * ladoB) / 2;
 
-  if (parseInt(ladoC) >= parseInt(ladoA)) {
-    resultado.innerHTML = "Error, A debe ser mayor a C";
+  if (
+    ladoC >= ladoA ||
+    ladoA < 1 ||
+    ladoB < 1 ||
+    ladoC < 1 
+  ) {
+    resultado.innerHTML = "Error, verifique que A sea mayor a C, o si ingresó algún número negativo";
   } else {
     resultado.innerHTML = `Área: ${cuadrado + triangulo} m2`;
   }
